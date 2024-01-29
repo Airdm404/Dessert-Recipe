@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct Dessert_RecipeApp: App {
+    @StateObject private var mealsModel = MealsModel()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(mealsModel)
         }
     }
 }
