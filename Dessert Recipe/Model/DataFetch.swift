@@ -7,6 +7,7 @@
 
 import Foundation
 
+//fetching the list of meals in the Desset category
 func fetchMeals(completion: @escaping ([Meal]?) -> Void) {
     let baseUrl = "https://www.themealdb.com/api/json/v1/1/"
     let urlString = "\(baseUrl)filter.php?c=Dessert"
@@ -34,6 +35,8 @@ func fetchMeals(completion: @escaping ([Meal]?) -> Void) {
 }
 
 
+
+//fetching the meal details by its ID
 func fetchMealDetail(mealId: String, completion: @escaping (MealDetail?) -> Void) {
     let urlString = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=\(mealId)"
     guard let url = URL(string: urlString) else {

@@ -4,6 +4,8 @@
 //
 //  Created by Edem Ahorlu on 1/30/24.
 //
+//  Custom logo for the app
+//
 
 import SwiftUI
 

@@ -8,6 +8,8 @@
 
 
 import Foundation
+
+//class for meal object
 class MealsModel: ObservableObject {
     @Published var meals: [Meal] = []
     @Published var isLoading = false
@@ -26,12 +28,12 @@ class MealsModel: ObservableObject {
                 return
             }
             self?.meals = meals
-            print(meals)
         }
     }
 }
 
 
+// class for meal details object
 class MealDetailModel: ObservableObject {
     @Published var mealDetail: MealDetail?
     @Published var isLoading = false
@@ -47,7 +49,6 @@ class MealDetailModel: ObservableObject {
                 return
             }
             self?.mealDetail = mealDetail
-            print(mealDetail)
         }
     }
 }

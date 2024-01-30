@@ -4,6 +4,8 @@
 //
 //  Created by Edem Ahorlu on 1/29/24.
 //
+//  View for single meal item in a list, displaying its name and thumbnail image
+//
 
 import SwiftUI
 

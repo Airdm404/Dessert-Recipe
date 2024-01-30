@@ -4,6 +4,8 @@
 //
 //  Created by Edem Ahorlu on 1/29/24.
 //
+//  Detail view for each meal
+//
 
 import SwiftUI
 
