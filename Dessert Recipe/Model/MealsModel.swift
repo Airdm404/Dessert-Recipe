@@ -30,3 +30,24 @@ class MealsModel: ObservableObject {
         }
     }
 }
+
+
+class MealDetailModel: ObservableObject {
+    @Published var mealDetail: MealDetail?
+    @Published var isLoading = false
+    @Published var errorMessage: String?
+    
+
+    func loadMealDetail(mealId: String) {
+        isLoading = true
+        fetchMealDetail(mealId: mealId) { [weak self] mealDetail in
+            self?.isLoading = false
+            guard let mealDetail = mealDetail else {
+                self?.errorMessage = "Failed to fetch meal details."
+                return
+            }
+            self?.mealDetail = mealDetail
+            print(mealDetail)
+        }
+    }
+}

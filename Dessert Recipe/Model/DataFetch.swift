@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 func fetchMeals(completion: @escaping ([Meal]?) -> Void) {
     let baseUrl = "https://www.themealdb.com/api/json/v1/1/"
     let urlString = "\(baseUrl)filter.php?c=Dessert"
@@ -33,3 +32,36 @@ func fetchMeals(completion: @escaping ([Meal]?) -> Void) {
         }
     }.resume()
 }
+
+
+func fetchMealDetail(mealId: String, completion: @escaping (MealDetail?) -> Void) {
+    let urlString = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=\(mealId)"
+    guard let url = URL(string: urlString) else {
+        completion(nil)
+        return
+    }
+    
+    URLSession.shared.dataTask(with: url) { data, response, error in
+        guard let data = data, error == nil else {
+            completion(nil)
+            return
+        }
+        do {
+            let decoder = JSONDecoder()
+            let serverMealDetail = try decoder.decode(ServerMealDetail.self, from: data)
+            if let mealDetail = serverMealDetail.meals.first {
+                DispatchQueue.main.async {
+                    completion(mealDetail)
+                }
+            } else {
+                completion(nil)
+            }
+        } catch {
+            print("Error decoding meal detail: \(error)")
+            completion(nil)
+        }
+
+
+    }.resume()
+}
+

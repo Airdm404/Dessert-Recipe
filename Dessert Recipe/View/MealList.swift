@@ -14,7 +14,7 @@ struct MealList: View {
         NavigationView {
             List(sortedMeals, id: \.id) { meal in
                 NavigationLink {
-                    MealDetails()
+                    MealDetails(mealId: meal.idMeal)
                 } label: {
                     MealItem(meal: meal)
                 }
