@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		723CA8882B68BB6C00DD8713 /* DessertRecipeLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723CA8872B68BB6C00DD8713 /* DessertRecipeLogo.swift */; };
 		727CBE372B64F4430092CF37 /* Dessert_RecipeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CBE362B64F4430092CF37 /* Dessert_RecipeApp.swift */; };
 		727CBE392B64F4430092CF37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727CBE382B64F4430092CF37 /* ContentView.swift */; };
 		727CBE3B2B64F4450092CF37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 727CBE3A2B64F4450092CF37 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		723CA8872B68BB6C00DD8713 /* DessertRecipeLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertRecipeLogo.swift; sourceTree = "<group>"; };
 		727CBE332B64F4430092CF37 /* Dessert Recipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dessert Recipe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		727CBE362B64F4430092CF37 /* Dessert_RecipeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dessert_RecipeApp.swift; sourceTree = "<group>"; };
 		727CBE382B64F4430092CF37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				72B701DF2B677A2800261C1A /* MealList.swift */,
 				72B701E12B677D1800261C1A /* MealItem.swift */,
 				72B701E32B681C4C00261C1A /* MealDetails.swift */,
+				723CA8872B68BB6C00DD8713 /* DessertRecipeLogo.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72B701D82B67727D00261C1A /* DataStructures.swift in Sources */,
+				723CA8882B68BB6C00DD8713 /* DessertRecipeLogo.swift in Sources */,
 				72B701E42B681C4C00261C1A /* MealDetails.swift in Sources */,
 				72B701DC2B67798E00261C1A /* MealsModel.swift in Sources */,
 				727CBE392B64F4430092CF37 /* ContentView.swift in Sources */,
