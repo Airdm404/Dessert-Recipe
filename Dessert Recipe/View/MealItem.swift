@@ -14,23 +14,24 @@ struct MealItem: View {
     
     var body: some View {
         HStack {
-            VStack(alignment: .leading, spacing: 10) {
+            VStack {
                 Text(meal.strMeal)
-                    .font(.headline)
-                    .foregroundColor(.primary)
+                    .font(Font.custom("Karla", size: 16).weight(.heavy))
+                    .foregroundColor(.black)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
 
             AsyncImage(url: URL(string: meal.strMealThumb)) { image in
-                image.resizable()
+                image
+                    .resizable()
             } placeholder: {
                 ProgressView()
             }
-            .scaledToFill()
-            .frame(width: 90, height: 90)
+            .frame(maxWidth: 90, maxHeight: 90)
             .clipShape(RoundedRectangle(cornerRadius: 8))
         }
         .padding(.vertical)
+        .frame(maxHeight: 150)
         
     }
 }

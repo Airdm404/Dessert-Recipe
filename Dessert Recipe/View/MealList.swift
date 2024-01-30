@@ -12,14 +12,18 @@ struct MealList: View {
     
     var body: some View {
         NavigationView {
-            List(sortedMeals, id: \.id) { meal in
-                NavigationLink {
-                    MealDetails(mealId: meal.idMeal)
-                } label: {
-                    MealItem(meal: meal)
+            VStack {
+                DessertRecipeLogo()
+                
+                List(sortedMeals, id: \.id) { meal in
+                    NavigationLink {
+                        MealDetails(mealId: meal.idMeal)
+                    } label: {
+                        MealItem(meal: meal)
+                    }
                 }
+                .listStyle(.plain)
             }
-            .navigationTitle("Dessert")
         }
     }
     
