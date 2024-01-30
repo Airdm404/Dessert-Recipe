@@ -10,12 +10,31 @@ import SwiftUI
 struct MealList: View {
     @EnvironmentObject var mealsModel: MealsModel
     
+    @State var searchText = ""
+    
     var body: some View {
         NavigationView {
             VStack {
                 DessertRecipeLogo()
                 
-                List(sortedMeals, id: \.id) { meal in
+                ZStack(alignment: .trailing) {
+                    TextField("Search", text: $searchText)
+                        .padding(8)
+                        .background(Color.gray.opacity(0.1).cornerRadius(8))
+                        .frame(width: UIScreen.main.bounds.width * 0.9)
+                        
+                    if !searchText.isEmpty {
+                        Button(action: {
+                            self.searchText = ""
+                        }) {
+                            Image(systemName: "xmark.circle.fill")
+                                .foregroundColor(.gray)
+                                .padding(.trailing, 8)
+                        }
+                    }
+                }
+                
+                List(filteredMeals, id: \.id) { meal in
                     NavigationLink {
                         MealDetails(mealId: meal.idMeal)
                     } label: {
@@ -27,8 +46,12 @@ struct MealList: View {
         }
     }
     
-    private var sortedMeals: [Meal] {
-        mealsModel.meals.sorted { $0.strMeal < $1.strMeal }
+    private var filteredMeals: [Meal] {
+        if searchText.isEmpty {
+            return mealsModel.meals.sorted { $0.strMeal < $1.strMeal }
+        } else {
+            return mealsModel.meals.filter { $0.strMeal.localizedCaseInsensitiveContains(searchText) }
+        }
     }
 }
 

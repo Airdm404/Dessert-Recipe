@@ -31,7 +31,9 @@ struct MealDetails: View {
                 .frame(minHeight: 150)
                 
                 Text(mealDetail.strMeal)
-                    .font(Font.custom("Markazi Text", size: 32))
+                    .font(Font.custom("Markazi Text", size: 28))
+                    .frame(maxWidth: .infinity, alignment: .center)
+
                 
                 Spacer(minLength: 20)
                 
